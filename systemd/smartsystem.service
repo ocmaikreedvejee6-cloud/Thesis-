@@ -1,0 +1,17 @@
+[Unit]
+Description=Smart Face Detection System
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/smart_system
+
+ExecStart=/home/pi/smart_system/venv/bin/python /home/pi/smart_system/main.py
+
+Restart=always
+RestartSec=3
+
+Environment=PYTHONUNBUFFERED=1
+
+[Install]
+WantedBy=multi-user.target
